@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(JUnitPlatform.class)
 @SelectPackages(value = { "com.person" } )
-@SelectClasses( { CalculatorTest.class, Calculator2Test.class, CupTest.class } ) // Add on more classes as we make more.
+@SelectClasses( { CalculatorTest.class, Calculator2Test.class, CupTest.class, BookTest.class } ) // Add on more classes as we make more.
 
 public class TestSuite {
 

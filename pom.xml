@@ -18,6 +18,7 @@
         <allure.cmd.download.url>
             https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline
         </allure.cmd.download.url>
+
     </properties>
 
     <dependencies>
