@@ -41,4 +41,7 @@ class BookTest {
         book.setAuthor("Stephen King");
         assertEquals("Stephen King", book.getAuthor());
     }
+    @Test
+    // Casting necessary due to ambiguous method (obj, obj or long, long) error.
+    void testGetPages() { Assert.assertEquals(400, (int) book.getPages()); }
 }
