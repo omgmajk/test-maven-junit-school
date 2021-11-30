@@ -10,31 +10,32 @@ class BookTest {
 
     @Test
     void testGetTitle() {
-        Assert.assertEquals("NOS4A2", book.getTitle());
+        assertEquals("NOS4A2", book.getTitle());
     }
 
     @Test
     void testSetTitle() {
         book.setTitle("Something Wicked This Way Comes");
-        Assert.assertEquals("Something Wicked This Way Comes", book.getTitle());
+        assertEquals("Something Wicked This Way Comes", book.getTitle());
 
         Throwable e = assertThrows(IllegalArgumentException.class,
                 () -> book.setTitle("")
         );
-        Assert.assertEquals("Title most include characters", e.getMessage());
+        assertEquals("Title most include characters", e.getMessage());
         // Check that the title didn't change
-        Assert.assertTrue(book.getTitle().contains("Something"));
+        assertTrue(book.getTitle().contains("Something"));
     }
 
     @Test
     // Getting around the setTitle null check
     void testNullTitle() {
         Book book2 = new Book(null, 200, null);
-        Assert.assertTrue(book2.getTitle() == null);
+        // Could be simplified with assertNull.
+        assertTrue(book2.getTitle() == null);
     }
 
     @Test
-    void testGetAuthor() { Assert.assertEquals("Joe Hill", book.getAuthor());}
+    void testGetAuthor() { assertEquals("Joe Hill", book.getAuthor());}
 
     @Test
     void testSetAuthor() {
@@ -43,12 +44,17 @@ class BookTest {
     }
 
     @Test
-    // Casting necessary due to ambiguous method (obj, obj or long, long) error.
-    void testGetPages() { Assert.assertEquals(400, (int) book.getPages()); }
+    void testGetPages() { assertEquals(400, book.getPages()); }
 
     @Test
     void testSetPages() {
         book.setPages(666);
         assertEquals(666, book.getPages());
+
+        // Set negative pages
+        Throwable e = assertThrows(IllegalArgumentException.class,
+                () -> book.setPages(-1)
+        );
+        assertEquals("Pages can´t be negative", e.getMessage());
     }
 }
