@@ -28,7 +28,7 @@ class BookTest {
 
     @Test
     // Getting around the setTitle null check
-    void testNullSetTitle() {
+    void testNullTitle() {
         Book book2 = new Book(null, 200, null);
         Assert.assertTrue(book2.getTitle() == null);
     }
@@ -41,7 +41,14 @@ class BookTest {
         book.setAuthor("Stephen King");
         assertEquals("Stephen King", book.getAuthor());
     }
+
     @Test
     // Casting necessary due to ambiguous method (obj, obj or long, long) error.
     void testGetPages() { Assert.assertEquals(400, (int) book.getPages()); }
+
+    @Test
+    void testSetPages() {
+        book.setPages(666);
+        assertEquals(666, book.getPages());
+    }
 }
