@@ -35,6 +35,7 @@ class CupTest {
         );
         assertTrue(e.getMessage().contains("Percent must be"));
         assertEquals("Percent must be >=0 and <= 100", e.getMessage());
+        assertEquals("Percent must be >=0 and <= 100", e2.getMessage());
     }
     @Test
     void testAll() {
