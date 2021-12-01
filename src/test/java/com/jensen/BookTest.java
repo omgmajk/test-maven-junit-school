@@ -1,6 +1,7 @@
 package com.jensen;
 
 import org.junit.Assert;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -26,6 +27,7 @@ class BookTest {
         assertTrue(book.getTitle().contains("Something"));
     }
 
+    @DisplayName("Testing null title")
     @Test
     // Getting around the setTitle null check
     void testNullTitle() {
@@ -35,7 +37,7 @@ class BookTest {
     }
 
     @Test
-    void testGetAuthor() { assertEquals("Joe Hill", book.getAuthor());}
+    void testGetAuthor() { assertEquals("Joe Hill", book.getAuthor()); }
 
     @Test
     void testSetAuthor() {
