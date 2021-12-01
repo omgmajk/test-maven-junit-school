@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Test Suite: Book.java")
 class BookTest {
     Book book = new Book("NOS4A2", 400, "Joe Hill");
 
@@ -27,7 +28,6 @@ class BookTest {
         assertTrue(book.getTitle().contains("Something"));
     }
 
-    @DisplayName("Testing null title")
     @Test
     // Getting around the setTitle null check
     void testNullTitle() {

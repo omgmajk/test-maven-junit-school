@@ -1,9 +1,11 @@
 package com.jensen;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Test Suite: Cup.java")
 class CupTest {
     public Cup cup = new Cup("coke", 10.0);
 
