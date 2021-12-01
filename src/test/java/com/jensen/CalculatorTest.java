@@ -64,10 +64,8 @@ class CalculatorTest {
         exCalc.setFirstValue(9);
         exCalc.setSecondValue(3);
 
-        exCalc.execute('a');
-
+        assertEquals(12.0, exCalc.execute('a'));
         assertEquals("Result:12.0", outputStreamCap.toString().trim());
-        assertEquals(12.0, exCalc.getResult());
     }
 
     @Test
@@ -77,10 +75,8 @@ class CalculatorTest {
         exCalc.setFirstValue(9);
         exCalc.setSecondValue(3);
 
-        exCalc.execute('s');
-
+        assertEquals(6.0, exCalc.execute('s'));
         assertEquals("Result:6.0", outputStreamCap.toString().trim());
-        assertEquals(6.0, exCalc.getResult());
     }
 
     @Test
@@ -90,10 +86,8 @@ class CalculatorTest {
         exCalc.setFirstValue(9);
         exCalc.setSecondValue(3);
 
-        exCalc.execute('m');
-
+        assertEquals(27.0, exCalc.execute('m'));
         assertEquals("Result:27.0", outputStreamCap.toString().trim());
-        assertEquals(27.0, exCalc.getResult());
     }
 
     @Test
@@ -103,16 +97,13 @@ class CalculatorTest {
         exCalc.setFirstValue(9);
         exCalc.setSecondValue(3);
 
-        exCalc.execute('d');
-
+        assertEquals(3.0, exCalc.execute('d'));
         assertEquals("Result:3.0", outputStreamCap.toString().trim());
-        assertEquals(3.0, exCalc.getResult());
     }
 
     @Test
     void outputTestExecuteDefault() {
-        calc.execute('k');
+        assertEquals(0.0, calc.execute('k'));
         assertEquals("Invalid opCode:k", outputStreamCap.toString().trim());
-        assertEquals(0.0, calc.getResult());
     }
 }
