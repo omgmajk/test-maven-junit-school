@@ -13,9 +13,6 @@ import org.junit.runner.RunWith;
 // Add on more classes as we make more to the test suite
 @SelectClasses( { CalculatorTest.class, Calculator2Test.class, CupTest.class, BookTest.class } )
 
-// So that we can run tests in order by using @Order(n)
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-
 public class TestSuite {
 
 }
