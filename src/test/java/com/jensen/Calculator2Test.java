@@ -64,6 +64,7 @@ class Calculator2Test {
     @Test
     @Order(6)
     void testQuote() {
+        // Easier to initialize as array because of syntax to add.
         List<String> allQuotes = Arrays.asList(quotes);
         assertTrue(allQuotes.contains(calc.quote()));
         assertEquals(6, calc.getCounter());
