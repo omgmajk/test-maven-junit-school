@@ -16,4 +16,12 @@ Since I did not develop these methods and have no idea what the requirements are
 
 Typically all tests are ran in an order that is decided by JUnit or possibly JVM, I let this happen in all cases except in the **Calculator2Test-class** where the `getCounter()`-method needs a specific order. In this case I have used `@TestMethodOrder` and `Order(n)` to force the tests to run in a specific order.
 
-In **CalculatorTest.class** there are no return-values with the methods, thus I decided instead on capturing STDOUT/Console output by setting PrintStream to a `ByteArrayOutputStream` that I can later convert to a string and test against. Each test method thus has a setup method that is run with the `@BeforeEach` statement.
+In the **CalculatorTest-class** there are no return-values with the methods, thus I decided instead on capturing STDOUT/Console output by setting PrintStream to a `ByteArrayOutputStream` that I can later convert to a string and test against. Each test method thus has a setup method that is run with the `@BeforeEach` statement. This `ByteArrayOutputStream`is not reset between calls, so each method contains only one test. To test another output, I have to create a new method, with the way I chose to do it. 
+
+In `outputTestExecuteDefaultUnicode()`still in the **CalculatorTest-class** I test with the unicode character ✔ - a non-ascii character. This is not returned from JVM, instead a `?`comes back. I have decided to test for that, since tests will fail otherwise, which is not ideal but these classes will not be further developed.
+
+## Test design
+
+The classes in this exercise are very basic and has no method overloading, so in many cases it's hard to find ways to test outside of normal `assertEquals`. A lot of the time IntelliJ will also *simplify* the tests down to `assertEqual` or `assertTrue` giving them even less variation. 
+
+In a lot of the classes there is also a lack of exception handling. But when these are present, I have decided to test with values that are caught in exceptions by using `assertThrows(IllegalArgumentException.class)` in order to fetch the message and test for equality with `assertEqual`.
