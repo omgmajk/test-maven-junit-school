@@ -69,4 +69,13 @@ class Calculator2Test {
         assertTrue(allQuotes.contains(calc.quote()));
         assertEquals(6, calc.getCounter());
     }
+
+    @Test
+    @Order(7)
+    void testOverflowAdd() {
+        // Intentional overflow
+        int max = Integer.MAX_VALUE;
+        assertEquals(-2147483648, calc.add(max, 1));
+        assertEquals(7, calc.getCounter());
+    }
 }
