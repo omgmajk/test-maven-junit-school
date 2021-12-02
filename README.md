@@ -22,6 +22,6 @@ In `outputTestExecuteDefaultUnicode()`still in the **CalculatorTest-class** I te
 
 ## Test design
 
-The classes in this exercise are very basic and has no method overloading, so in many cases it's hard to find ways to test outside of normal `assertEquals`. A lot of the time IntelliJ will also *simplify* the tests down to `assertEqual` or `assertTrue` giving them even less variation. 
+The classes in this exercise are very basic and has no method overloading, so in many cases it's hard to find ways to test outside of normal `assertEquals`. A lot of the time IntelliJ will also *simplify* the tests down to `assertEquals` or `assertTrue` giving them even less variation. 
 
 In a lot of the classes there is also a lack of exception handling. But when these are present, I have decided to test with values that are caught in exceptions by using `assertThrows(IllegalArgumentException.class)` in order to fetch the message and test for equality with `assertEqual`.
