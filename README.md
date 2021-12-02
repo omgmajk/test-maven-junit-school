@@ -14,7 +14,7 @@ Each method in each class has a corresponding test method, with the exception of
 
 Since I did not develop these methods and have no idea what the requirements are, I have decided not to test for the functionality I think should be included, and rather test the functionality that is already there. 
 
-Typically all tests are ran in an order that is decided by JUnit or possibly JVM, I let this happen in all cases except in the **Calculator2Test-class** where the `getCounter()`-method needs a specific order. In this case I have used `@TestMethodOrder` and `Order(n)` to force the tests to run in a specific order.
+Typically all tests run in an order that is decided by JUnit, or possibly JVM, I let this happen in all cases except in the **Calculator2Test-class** where the `getCounter()`-method needs a specific order. In this case I have used `@TestMethodOrder` and `@Order(n)` to force the tests to run in a specific order.
 
 In the **CalculatorTest-class** there are no return-values with the methods, thus I decided instead on capturing STDOUT/Console output by setting PrintStream to a `ByteArrayOutputStream` that I can later convert to a string and test against. Each test method thus has a setup method that is run with the `@BeforeEach` statement. This `ByteArrayOutputStream`is not reset between calls, so each method contains only one test. To test another output, I have to create a new method, with the way I chose to do it. 
 
