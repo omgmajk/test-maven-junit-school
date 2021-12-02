@@ -6,11 +6,11 @@
 
 ## Test suite
 
-I have chosen to use a test suite where we can chose to run all classes in com.jensen with `@SelectPackages` or run individual classes with `@SelectClasses`. Currently I am using `@SelectClasses` so that I can run them one by one if I wish to.
+I have chosen to use a test suite where we can choose to run all classes in `com.jensen` with `@SelectPackages` or run individual classes with `@SelectClasses`. Currently I am using `@SelectClasses` so that I can run them one by one if I wish to.
 
 ## Thought process
 
-Each method in each class has a corresponding test method, with the exception of `getCounter()` (that gets tested with each other test method) in the **Calculator2.java-class**. The reason for doing so it to get coverage of all methods and make sure that they return the value we seek. 
+Each method in each class has a corresponding test method, with the exception of `getCounter()` (that gets tested with each other test method) in the **Calculator2.java-class**. The reason for doing so is to get coverage of all methods and make sure that they return the value we seek. 
 
 Since I did not develop these methods and have no idea what the requirements are, I have decided not to test for functionality I think should be included, rather test the functionality that is already there. 
 
