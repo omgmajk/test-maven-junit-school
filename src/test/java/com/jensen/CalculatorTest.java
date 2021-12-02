@@ -105,7 +105,14 @@ class CalculatorTest {
 
     @Test
     void outputTestExecuteDefault() {
+        // Testing opCode not listed
         assertEquals(0.0, calc.execute('k'));
         assertEquals("Invalid opCode:k", outputStreamCap.toString().trim());
+    }
+    @Test
+    void outputTestExecuteDefaultUnicode() {
+        // Testing opCode that is not ascii
+        assertEquals(0.0, calc.execute('✔'));
+        assertEquals("Invalid opCode:?", outputStreamCap.toString().trim());
     }
 }
