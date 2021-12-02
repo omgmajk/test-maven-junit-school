@@ -12,7 +12,7 @@ I have chosen to use a test suite where we can choose to run all classes in `com
 
 Each method in each class has a corresponding test method, with the exception of `getCounter()` (that gets tested with each other test method) in the **Calculator2.java-class**. The reason for doing so is to get coverage of all methods and make sure that they return the value we seek. 
 
-Since I did not develop these methods and have no idea what the requirements are, I have decided not to test for functionality I think should be included, rather test the functionality that is already there. 
+Since I did not develop these methods and have no idea what the requirements are, I have decided not to test for the functionality I think should be included, and rather test the functionality that is already there. 
 
 Typically all tests are ran in an order that is decided by JUnit or possibly JVM, I let this happen in all cases except in the **Calculator2Test-class** where the `getCounter()`-method needs a specific order. In this case I have used `@TestMethodOrder` and `Order(n)` to force the tests to run in a specific order.
 
