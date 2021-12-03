@@ -10,7 +10,7 @@ I have chosen to use a test suite where we can choose to run all classes in `com
 
 ## Thought process
 
-Each method in each class has a corresponding test method, with the exception of `getCounter()` (that gets tested with each other test method) in the **Calculator2.java-class**. The reason for doing so is to get coverage of all methods and make sure that they return the value we seek. 
+Each method in each class has a corresponding test method, except for `getCounter()` (that gets tested with each other test method) in the **Calculator2.java-class**. The reason for doing so is to get coverage of all methods and make sure that they return the value we seek. 
 
 Since I did not develop these methods and have no idea what the requirements are, I have decided not to test for the functionality I think should be included (meaning: the functionality I personally had developed for the classes) and rather test the functionality that is already there. 
 
